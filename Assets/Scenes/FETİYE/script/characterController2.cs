@@ -8,7 +8,7 @@ public class characterController2 : MonoBehaviour
     public float speed = 1.0f;
     private float moveDirection;
     private bool jump;
-    private bool grounded = true;
+    public bool grounded = true;
     private bool moving;
     private Rigidbody _rigidbody2;
     private Animator _animator2;
