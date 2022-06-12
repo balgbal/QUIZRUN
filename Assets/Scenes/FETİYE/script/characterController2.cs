@@ -7,8 +7,8 @@ public class characterController2 : MonoBehaviour
     public float jumpForce = 4.0f;
     public float speed = 1.0f;
     private float moveDirection;
-    private bool jump;
-    public bool grounded = true;
+    private bool Rig_jump;
+    private bool grounded = true;
     private bool moving;
     private Rigidbody _rigidbody2;
     private Animator _animator2;
@@ -34,10 +34,10 @@ public class characterController2 : MonoBehaviour
             moving = false;
         }
         _rigidbody2.velocity = new Vector3(x: speed * moveDirection, _rigidbody2.velocity.y, z: speed);
-        if ( jump == true)
+        if ( Rig_jump == true)
         {
             _rigidbody2.velocity = new Vector3( x:jumpForce , _rigidbody2.velocity.y, _rigidbody2.velocity.z);
-            jump = false;
+            Rig_jump = false;
         }
     }
 
@@ -62,7 +62,7 @@ public class characterController2 : MonoBehaviour
 
         if ( grounded == true && Input.GetKey(KeyCode.Space))
         {
-            jump = true;
+            Rig_jump = true;
             grounded = false;
             _animator2.SetTrigger("jump");
             _animator2.SetBool("grounded", false);
@@ -73,8 +73,9 @@ public class characterController2 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Zemin"))
         {
-            _animator2.SetBool("grounded", true);
             grounded = true;
+            _animator2.SetBool("grounded", true);
+            
         }
 
     }

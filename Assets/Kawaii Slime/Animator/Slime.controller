@@ -16,10 +16,6 @@ AnimatorState:
   - {fileID: -896170673271906189}
   - {fileID: 1017250119709612973}
   - {fileID: 2978094184868494924}
-<<<<<<< Updated upstream
-  - {fileID: -4357526495271752034}
-=======
->>>>>>> Stashed changes
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -35,61 +31,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
-<<<<<<< Updated upstream
---- !u!1102 &-4577077954368302935
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Walk
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -350677978886108658}
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -694698267659698274, guid: eb340672e17c0af4089e561b61cdc548, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1101 &-4357526495271752034
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: Speed
-    m_EventTreshold: 0.001
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -4577077954368302935}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0.006917779
-  m_ExitTime: 0.0025541799
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
-=======
->>>>>>> Stashed changes
 --- !u!1102 &-4307273841543664277
 AnimatorState:
   serializedVersion: 6
@@ -134,11 +75,7 @@ AnimatorStateMachine:
     m_Position: {x: 268.64008, y: 177.51773, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1721407327708824991}
-<<<<<<< Updated upstream
-    m_Position: {x: 230, y: -50, z: 0}
-=======
     m_Position: {x: 220, y: -50, z: 0}
->>>>>>> Stashed changes
   - serializedVersion: 1
     m_State: {fileID: -4307273841543664277}
     m_Position: {x: 450, y: -130, z: 0}
@@ -148,12 +85,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 6035468755691371766}
     m_Position: {x: 550, y: 180, z: 0}
-<<<<<<< Updated upstream
-  - serializedVersion: 1
-    m_State: {fileID: -4577077954368302935}
-    m_Position: {x: 680, y: 70, z: 0}
-=======
->>>>>>> Stashed changes
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -274,31 +205,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
-<<<<<<< Updated upstream
---- !u!1101 &-350677978886108658
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -6210735791947704313}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.6052631
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
-=======
->>>>>>> Stashed changes
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -313,44 +219,37 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: DamageType
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-<<<<<<< Updated upstream
+    m_Controller: {fileID: 0}
   - m_Name: jump
-=======
-  - m_Name: Jump
->>>>>>> Stashed changes
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Damage
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-<<<<<<< Updated upstream
+    m_Controller: {fileID: 0}
   - m_Name: grounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 9100000}
-=======
->>>>>>> Stashed changes
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -500,11 +399,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-<<<<<<< Updated upstream
     m_ConditionEvent: jump
-=======
-    m_ConditionEvent: Jump
->>>>>>> Stashed changes
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6035468755691371766}
@@ -514,11 +409,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-<<<<<<< Updated upstream
-  m_ExitTime: 0.031362787
-=======
   m_ExitTime: 1
->>>>>>> Stashed changes
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -553,11 +444,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_Name: jump
-=======
   m_Name: Jump
->>>>>>> Stashed changes
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -572,11 +459,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 2dcd6f23eeab57246bcbbd8abf3afb88, type: 2}
-<<<<<<< Updated upstream
-  m_Tag: 
-=======
   m_Tag: Jump
->>>>>>> Stashed changes
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -657,14 +540,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-<<<<<<< Updated upstream
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: grounded
-    m_EventTreshold: 0
-=======
   m_Conditions: []
->>>>>>> Stashed changes
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6210735791947704313}
   m_Solo: 0
@@ -674,11 +550,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 1
-<<<<<<< Updated upstream
-  m_HasExitTime: 0
-=======
   m_HasExitTime: 1
->>>>>>> Stashed changes
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1

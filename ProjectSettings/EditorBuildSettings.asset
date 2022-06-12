@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: "Assets/Scenes/FET\u0130YE/0-1.unity"
+    guid: 47f9e5a54c123ab44b697d4dc4c21f43
+  - enabled: 1
+    path: "Assets/Scenes/FET\u0130YE/0-2.unity"
+    guid: 18a4fb1d92718904f81822691bf78609
+  - enabled: 1
+    path: "Assets/Scenes/FET\u0130YE/1.unity"
+    guid: 024bbe5e8a7a1f444aa6601611e75f18
   m_configObjects: {}
