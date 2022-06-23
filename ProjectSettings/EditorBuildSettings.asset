@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: "Assets/Scenes/G\u0130ZEM/Sahneler/Menu.unity"
+    guid: ed107081e6826d74f9084d7da21bd4bb
+  - enabled: 1
+    path: "Assets/Scenes/G\u0130ZEM/Sahneler/testSahnesi.unity"
+    guid: 34800a5c6d76dfc4480a75027aa43603
   m_configObjects: {}
