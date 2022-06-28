@@ -14,12 +14,12 @@ public class nextLevel : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(_scene.buildIndex + 1);
+            SceneManager.LoadScene(_scene.buildIndex+1);
         }
     }
     public void StartLevel()
     {
-        SceneManager.LoadScene(_scene.buildIndex + 1);
+        SceneManager.LoadScene(_scene.buildIndex+1);
     }
 }
 
