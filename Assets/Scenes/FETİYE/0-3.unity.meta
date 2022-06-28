@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/FETİYE/0-3.unity.meta
 guid: 3aa175f0948cbb5499e6c54bf93f34f7
+========
+guid: 2cda990e2423bbf4892e6590ba056729
+>>>>>>>> 609bd043f79c0f2a9c27322662c23c71e75410b6:Assets/Buttons/Scenes/SampleScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

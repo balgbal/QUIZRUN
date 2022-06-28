@@ -22,6 +22,6 @@ public class GroudController : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        groud.transform.position += new Vector3(0, 0, 127.6f);
+        groud.transform.position += new Vector3(0, 0, 152.4f);
     }
 }
