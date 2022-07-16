@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public bool gameContinue = true;
+    public GameObject gameOverPanel;
     #region character
     public FloatingJoystick floatingJoystick;
     public Rigidbody playerRB;
@@ -23,12 +24,20 @@ public class GameController : MonoBehaviour
         {
             MoveClamp();
         }
+        else
+        {
+            gameOverPanel.SetActive(true);
+        }
     }
     private void FixedUpdate()
     {
         if (gameContinue)
         {
             Move();
+        }
+        else
+        {
+            gameOverPanel.SetActive(true);
         }
     }
     private void MoveClamp()
