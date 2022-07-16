@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/FET\u0130YE/CharacterChoice 1.unity"
     guid: 5e85456a5f17aa74fbd1568e38d1693c
+  - enabled: 1
+    path: "Assets/Scenes/G\u0130ZEM/Sahneler/testSahnesi.unity"
+    guid: 34800a5c6d76dfc4480a75027aa43603
+  - enabled: 1
+    path: "Assets/Scenes/G\u0130ZEM/Sahneler/AnaMenu.unity"
+    guid: 5f6f56f30d9b4e4459abfe2274ba18d4
   m_configObjects: {}

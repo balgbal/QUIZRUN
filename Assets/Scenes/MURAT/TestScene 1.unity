@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.23881614, g: 0.5822998, b: 0.98934764, a: 1}
+  m_IndirectSpecularColor: {r: 0.23878413, g: 0.58264816, b: 0.99004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameContinue: 1
-  floatingJoystick: {fileID: 0}
+  floatingJoystick: {fileID: 6485576207804647147}
   playerRB: {fileID: 0}
   rlSpeed: 0
 --- !u!4 &987151434
@@ -2158,7 +2158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3659372212028160521}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 1, z: 17.73}
+  m_LocalPosition: {x: 0.19, y: 1, z: 17.73}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
