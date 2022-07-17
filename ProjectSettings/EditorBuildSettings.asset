@@ -5,25 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/FET\u0130YE/0-1.unity"
     guid: 47f9e5a54c123ab44b697d4dc4c21f43
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/FET\u0130YE/0-2.unity"
     guid: 18a4fb1d92718904f81822691bf78609
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/FET\u0130YE/0-3.unity"
     guid: 3aa175f0948cbb5499e6c54bf93f34f7
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/FET\u0130YE/MainMenuV2 1.unity"
     guid: ae8caaf0dfdfc9a4eb3f4068b246e960
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/FET\u0130YE/CharacterChoice 1.unity"
     guid: 5e85456a5f17aa74fbd1568e38d1693c
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/G\u0130ZEM/Sahneler/testSahnesi.unity"
     guid: 34800a5c6d76dfc4480a75027aa43603
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/G\u0130ZEM/Sahneler/AnaMenu.unity"
     guid: 5f6f56f30d9b4e4459abfe2274ba18d4
+  - enabled: 1
+    path: Assets/Scenes/MURAT/MainMenu.unity
+    guid: c3c284e92564b9d4da07813bde5fc045
+  - enabled: 1
+    path: Assets/Scenes/MURAT/CharacterChoiceV2.unity
+    guid: af9069e27110e56458d4832a80831ff1
+  - enabled: 1
+    path: Assets/Scenes/MURAT/GameScene.unity
+    guid: aa2b76250ca027045a5ecb8c242f6081
   m_configObjects: {}

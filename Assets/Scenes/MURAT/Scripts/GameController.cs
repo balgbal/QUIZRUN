@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public bool gameContinue = true;
     public GameObject gameOverPanel;
-    #region character
+    public GameObject mathPanel;
     public FloatingJoystick floatingJoystick;
     public Rigidbody playerRB;
-    public float rlSpeed;
+    public float rlSpeed =30.0f;
     private float border = 5.0f;
-    private GameObject mainChar;
-    #endregion
+    public GameObject mainChar;
+    public Text time, healt, status;
     private void Start()
     {
         mainChar = GameObject.Find("MainChar");
@@ -26,7 +27,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            gameOverPanel.SetActive(true);
+            mathPanel.SetActive(true);
         }
     }
     private void FixedUpdate()
@@ -37,7 +38,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            gameOverPanel.SetActive(true);
+            mathPanel.SetActive(true);
         }
     }
     private void MoveClamp()

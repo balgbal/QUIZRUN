@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     private int obstacleIndex;
     private float[] obstacleSpawnPos = new float[] { 0, 2.5f, -2.5f };
     private int obstacleSpawnIndex;
-    private float speed = 10.0f;
+    private float speed = 30.0f;
     private float startDelay = 2f;
     private float spawnInterval = 1.5f;
     private GameController gameControllerScript;
@@ -28,11 +28,16 @@ public class SpawnManager : MonoBehaviour
         {
             obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
             Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(obstacleSpawnPos[obstacleSpawnIndex], 0, 120), obstaclePrefabs[obstacleIndex].transform.rotation);
-
             obstacleSpawnIndex = Random.Range(0, obstacleSpawnPos.Length);
-
-
             transform.Translate(-Vector3.forward * Time.deltaTime * speed);
         }
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("collision çalýþtý");
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("triger çalýþtý");
     }
 }
