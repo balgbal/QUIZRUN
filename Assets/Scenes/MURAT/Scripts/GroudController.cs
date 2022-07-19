@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroudController : MonoBehaviour
 {
-    private float speed =10.0f;
+    public float speed =10.0f;
     public GameObject groud;
     private GameController gameControllerScript;
 

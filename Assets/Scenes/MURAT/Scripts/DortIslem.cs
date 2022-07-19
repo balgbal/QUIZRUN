@@ -16,26 +16,37 @@ public class DortIslem : MonoBehaviour
     {
         RandomNumber();
         gameControllerScript = GameObject.Find("GameController").GetComponent<GameController>();
+        //ZorlukSec();
     }
-    public void ZorlukSec()
-    {
-        switch (zorluk)
-        {
-            case Zorluk.Kolay:
-                number1 = Random.Range(1, 10);
-                number2 = Random.Range(1, 10);
-                break;
-            case Zorluk.Zor:
-                number1 = Random.Range(10, 100);
-                number2 = Random.Range(10, 100);
-                break;
-            default:
-                break;
-        }
-
-    }
+    //private void Update()
+    //{
+    //    if (gameControllerScript.HealtCounter == 0)
+    //    {
+    //        gameControllerScript.gameContinue = false;
+    //        gameControllerScript.mathPanel.SetActive(false);
+    //        gameControllerScript.gameOverPanel.SetActive(true);
+    //    }
+    //}
+    //public void ZorlukSec()
+    //{
+    //    switch (zorluk)
+    //    {
+    //        case Zorluk.Kolay:
+    //            number1 = Random.Range(1, 10);
+    //            number2 = Random.Range(1, 10);
+    //            break;
+    //        case Zorluk.Zor:
+    //            number1 = Random.Range(10, 100);
+    //            number2 = Random.Range(10, 100);
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //}
     public void RandomNumber()
     {
+        number1 = Random.Range(1, 10);
+        number2 = Random.Range(1, 10);
         operationNo = Random.Range(1, 5);
         switch (operationNo)
         {
@@ -46,7 +57,7 @@ public class DortIslem : MonoBehaviour
             case 2:
                 operation.text = "-";
                 again:
-                if (number1 < number2)
+                if (number1 >= number2)
                 {
                     operationConcluion = number1 - number2;
                 }
@@ -83,6 +94,7 @@ public class DortIslem : MonoBehaviour
         }
         question1.text = number1 + "";
         question2.text = number2 + "";
+        answer.text = "";
     }
     public void AnswerControl()
     {
@@ -91,10 +103,11 @@ public class DortIslem : MonoBehaviour
     public IEnumerator WaitAnswerCheck()
     {
         conclusion.text = ". . .";
-        yield return new WaitForSecondsRealtime(1.5f);
+        
         if (int.Parse(answer.text) == operationConcluion)
         {
             conclusion.text = "DOGRU";
+            yield return new WaitForSecondsRealtime(1.5f);
             gameControllerScript.gameContinue = true;
             gameControllerScript.mathPanel.SetActive(false);
             RandomNumber();
@@ -102,7 +115,22 @@ public class DortIslem : MonoBehaviour
         else
         {
             conclusion.text = "YANLIS";
-            gameControllerScript.gameOverPanel.SetActive(true);
+            gameControllerScript.HealtCounter = gameControllerScript.HealtCounter - 1;
+            gameControllerScript.healt.text = gameControllerScript.HealtCounter + "";
+            if (gameControllerScript.HealtCounter != 0)
+            {
+                yield return new WaitForSecondsRealtime(1.5f);
+                gameControllerScript.mathPanel.SetActive(false);
+                gameControllerScript.gameContinue = true;                
+                RandomNumber();
+            }
+            //else
+            //{
+            //    //yield return new WaitForSecondsRealtime(1.5f);
+            //    gameControllerScript.mathPanel.SetActive(false);
+            //    gameControllerScript.gameOverPanel.SetActive(true);
+            //}
+            //gameControllerScript.gameOverPanel.SetActive(true);
         }
     }
     #region Numbers

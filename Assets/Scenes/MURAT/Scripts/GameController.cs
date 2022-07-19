@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameController : MonoBehaviour
     private float border = 5.0f;
     public GameObject mainChar;
     public Text time, healt, status;
+    float timeCounter = 0.0f;
+    public int HealtCounter = 3;
     private void Start()
     {
         mainChar = GameObject.Find("MainChar");
@@ -21,13 +24,24 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
+        TimeControl();
         if (gameContinue)
         {
-            MoveClamp();
+            MoveClamp();            
         }
         else
         {
-            mathPanel.SetActive(true);
+            if (HealtCounter != 0)
+            {
+                mathPanel.SetActive(true);
+            }
+            else
+            {
+                gameContinue = false;
+                mathPanel.SetActive(false);
+                gameOverPanel.SetActive(true);
+            }
+            
         }
     }
     private void FixedUpdate()
@@ -38,7 +52,28 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            mathPanel.SetActive(true);
+            if (HealtCounter != 0)
+            {
+                mathPanel.SetActive(true);
+            }
+            else
+            {
+                gameContinue = false;
+                mathPanel.SetActive(false);
+                gameOverPanel.SetActive(true);
+            }
+        }
+    }
+    public void TimeControl()
+    {
+        if (gameContinue)
+        {
+            timeCounter += Time.deltaTime;
+            time.text = (int)timeCounter + "";
+        }
+        else
+        {
+            status.text = "Skor : " + (int)timeCounter;
         }
     }
     private void MoveClamp()
