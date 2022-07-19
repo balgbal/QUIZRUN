@@ -6,44 +6,46 @@ using TMPro;
 
 public class DortIslem : MonoBehaviour
 {
-    public enum Zorluk { Kolay,Zor};
-    public Zorluk zorluk;
     public TMP_Text question1,question2,operation,answer,conclusion;
     int number1,number2,operationNo;
     int operationConcluion;
-    private GameController gameControllerScript;
+    public GameController gameControllerScript;
+    public CharacterChoiceAnimation characterChoiceAnimationScript;
+    public bool diff = true;
+    public string stringDeger;
     private void Start()
     {
-        RandomNumber();
+        RandomNumberEasy();
+        DifficultySelection();
+        Difficulty();
         gameControllerScript = GameObject.Find("GameController").GetComponent<GameController>();
-        //ZorlukSec();
+        characterChoiceAnimationScript = GameObject.Find("CharacterChoiceAnimation").GetComponent<CharacterChoiceAnimation>();
     }
-    //private void Update()
-    //{
-    //    if (gameControllerScript.HealtCounter == 0)
-    //    {
-    //        gameControllerScript.gameContinue = false;
-    //        gameControllerScript.mathPanel.SetActive(false);
-    //        gameControllerScript.gameOverPanel.SetActive(true);
-    //    }
-    //}
-    //public void ZorlukSec()
-    //{
-    //    switch (zorluk)
-    //    {
-    //        case Zorluk.Kolay:
-    //            number1 = Random.Range(1, 10);
-    //            number2 = Random.Range(1, 10);
-    //            break;
-    //        case Zorluk.Zor:
-    //            number1 = Random.Range(10, 100);
-    //            number2 = Random.Range(10, 100);
-    //            break;
-    //        default:
-    //            break;
-    //    }
-    //}
-    public void RandomNumber()
+    public void DifficultySelection()
+    {
+        stringDeger = PlayerPrefs.GetString("diffSelection");
+        if (stringDeger == "easy")
+        {
+            diff = true;
+        }
+        else if (stringDeger == "hard")
+        {
+            diff = false;
+        }
+    }
+    
+    public void Difficulty()
+    {
+        if (diff)
+        {
+            RandomNumberEasy();
+        }
+        else
+        {
+            RandomNumberHard();
+        }
+    }
+    public void RandomNumberEasy()
     {
         number1 = Random.Range(1, 10);
         number2 = Random.Range(1, 10);
@@ -96,21 +98,72 @@ public class DortIslem : MonoBehaviour
         question2.text = number2 + "";
         answer.text = "";
     }
+    public void RandomNumberHard()
+    {
+        number1 = Random.Range(10, 100);
+        number2 = Random.Range(10, 100);
+        operationNo = Random.Range(1, 5);
+        switch (operationNo)
+        {
+            case 1:
+                operation.text = "+";
+                operationConcluion = number1 + number2;
+                break;
+            case 2:
+                operation.text = "-";
+            again:
+                if (number1 >= number2)
+                {
+                    operationConcluion = number1 - number2;
+                }
+                else
+                {
+                    number2 = Random.Range(10, 100);
+                    goto again;
+                }
+                break;
+            case 3:
+                operation.text = "*";
+                operationConcluion = number1 * number2;
+                break;
+            case 4:
+                operation.text = "/";
+                if (number1 % number2 != 0)
+                {
+                again2:
+                    number2 = Random.Range(10, 100);
+                    if (number1 % number2 == 0)
+                    {
+                        operationConcluion = number1 / number2;
+                    }
+                    else
+                    {
+                        goto again2;
+                    }
+                }
+                else
+                {
+                    operationConcluion = number1 / number2;
+                }
+                break;
+        }
+        question1.text = number1 + "";
+        question2.text = number2 + "";
+        answer.text = "";
+    }
     public void AnswerControl()
     {
         StartCoroutine(WaitAnswerCheck());
     }
     public IEnumerator WaitAnswerCheck()
-    {
-        conclusion.text = ". . .";
-        
+    {        
         if (int.Parse(answer.text) == operationConcluion)
         {
             conclusion.text = "DOGRU";
             yield return new WaitForSecondsRealtime(1.5f);
             gameControllerScript.gameContinue = true;
             gameControllerScript.mathPanel.SetActive(false);
-            RandomNumber();
+            Difficulty();
         }
         else
         {
@@ -122,15 +175,8 @@ public class DortIslem : MonoBehaviour
                 yield return new WaitForSecondsRealtime(1.5f);
                 gameControllerScript.mathPanel.SetActive(false);
                 gameControllerScript.gameContinue = true;                
-                RandomNumber();
+                Difficulty();
             }
-            //else
-            //{
-            //    //yield return new WaitForSecondsRealtime(1.5f);
-            //    gameControllerScript.mathPanel.SetActive(false);
-            //    gameControllerScript.gameOverPanel.SetActive(true);
-            //}
-            //gameControllerScript.gameOverPanel.SetActive(true);
         }
     }
     #region Numbers
@@ -173,6 +219,10 @@ public class DortIslem : MonoBehaviour
     public void Number9()
     {
         answer.text = answer.text + 9 + "";
+    }
+    public void ClearText()
+    {
+        answer.text = "";
     }
     #endregion
 }

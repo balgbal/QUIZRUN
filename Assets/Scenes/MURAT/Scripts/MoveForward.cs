@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
-    [SerializeField] private float speed = 10.0f;
-    [SerializeField] private float acceleration = 1.3f;
+    public float speed = 10.0f;
+    public float acceleration = 1.3f;
     private GameController gameControllerScript;
     private float leftBound = 11f;
     public float time = 5f;

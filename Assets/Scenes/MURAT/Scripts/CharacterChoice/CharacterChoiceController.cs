@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+using System.Collections;
 
 public class CharacterChoiceController : MonoBehaviour
 {
     public GameObject[] characters;
     public int selectedCharacter;
+    public string diffSelection;
+    public string lessons;
     private void Start()
     {
         selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
@@ -18,10 +22,38 @@ public class CharacterChoiceController : MonoBehaviour
         {
             go.SetActive(false);
         }
-        if (characters[selectedCharacter])
+        for (int i = 0; i < characters.Length; i++)
         {
-            characters[selectedCharacter].SetActive(true);
+            if (i == selectedCharacter)
+            {
+                characters[selectedCharacter].SetActive(true);
+            }
         }
+    }
+
+    public void MathSelection()
+    {
+        lessons = "matematik";
+        PlayerPrefs.SetString("lessonSelection",lessons);
+        PlayerPrefs.Save();
+    }
+    public void IngSelection()
+    {
+        lessons = "ingilizce";
+        PlayerPrefs.SetString("lessonSelection", lessons);
+        PlayerPrefs.Save();
+    }
+    public void DifficultyEasySelection()
+    {
+        diffSelection = "easy";
+        PlayerPrefs.SetString("diffSelection",diffSelection);
+        PlayerPrefs.Save();
+    }
+    public void DifficultyHardSelection()
+    {
+        diffSelection = "hard";
+        PlayerPrefs.SetString("diffSelection", diffSelection);
+        PlayerPrefs.Save();
     }
     public void PreviousCharacter()
     {
@@ -122,6 +154,7 @@ public class CharacterChoiceController : MonoBehaviour
     public void PlayGame()
     {
         PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("GameScene");
 
     }

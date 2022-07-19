@@ -7,6 +7,7 @@ using TMPro;
 public class GameController : MonoBehaviour
 {
     public bool gameContinue = true;
+    public GameObject questionPanel;
     public GameObject gameOverPanel;
     public GameObject mathPanel;
     public FloatingJoystick floatingJoystick;
@@ -17,8 +18,12 @@ public class GameController : MonoBehaviour
     public Text time, healt, status;
     float timeCounter = 0.0f;
     public int HealtCounter = 3;
+    public string stringDeger;
+    public bool IngOrMath;
+
     private void Start()
     {
+        LessonSelection();
         mainChar = GameObject.Find("MainChar");
         playerRB = mainChar.GetComponentInChildren<Rigidbody>();
     }
@@ -40,8 +45,7 @@ public class GameController : MonoBehaviour
                 gameContinue = false;
                 mathPanel.SetActive(false);
                 gameOverPanel.SetActive(true);
-            }
-            
+            }            
         }
     }
     private void FixedUpdate()
@@ -62,6 +66,19 @@ public class GameController : MonoBehaviour
                 mathPanel.SetActive(false);
                 gameOverPanel.SetActive(true);
             }
+        }
+    }
+    public void LessonSelection()
+    {
+        stringDeger = PlayerPrefs.GetString("lessonSelection");
+        if (stringDeger == "matematik")
+        {
+            IngOrMath = true;
+            mathPanel = Instantiate(Resources.Load("MathPanel") as GameObject, questionPanel.transform);
+        }
+        else if (stringDeger == "ingilizce")
+        {
+            IngOrMath = false;
         }
     }
     public void TimeControl()
