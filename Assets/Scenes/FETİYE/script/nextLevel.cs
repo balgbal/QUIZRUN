@@ -6,21 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class nextLevel : MonoBehaviour
 {
-    //public GameObject nasiloynanir;
+    
     private Scene _scene;
-    //[SerializeField] private Button HowToPlayText;
-    //[SerializeField] private Vector3 finalPosition;
-    //private Vector3 initialPosition;
     
     private void Awake()
     {
-        _scene = SceneManager.GetActiveScene();              //caching
-       // initialPosition = transform.position;
+        _scene = SceneManager.GetActiveScene();            
+      
     }
-    void Start()
-    {
-       // nasiloynanir = GameObject.FindGameObjectWithTag("oynanir");
-    }
+  
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -32,25 +26,17 @@ public class nextLevel : MonoBehaviour
     {
         SceneManager.LoadScene(_scene.buildIndex+1);
     }
-    //public void Update()
-    //{
-    //    //HowToPlayText.interactable = (indexNu != transform.childCount - 1);
-    //    //for (int i = 0; i < transform.childCount; i++)
-    //    //{
-    //    //    transform.GetChild(i).gameObject.SetActive(i == indexNu);
-    //    //}
-    //    nasiloynanir.transform.position = Vector3.Lerp(transform.position, finalPosition, 0.1f);
-    //    //transform.position += finalPosition;
+    
 
-    //}
+    public void Previousscene()
+    {
+        SceneManager.LoadScene(_scene.buildIndex - 1);
+    }
     public void QuitApp()
     {
         Application.Quit();
         Debug.Log("application has quit.");
     }
-    //private void OnDisable()
-    //{
-    //    transform.position = initialPosition;
-    //}
+    
 }
 

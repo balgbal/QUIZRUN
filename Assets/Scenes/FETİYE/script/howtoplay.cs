@@ -19,10 +19,12 @@ public class howtoplay : MonoBehaviour
     }
     public void oynanir()
     {
-        
         nasiloynanir.transform.position = Cube.transform.position;
-        
     }
 
+    public void back()
+    {
+        nasiloynanir.gameObject.SetActive(false);
+    }
 }
 
