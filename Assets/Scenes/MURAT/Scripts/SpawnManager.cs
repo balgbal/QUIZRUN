@@ -17,6 +17,10 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating("SpawnRandomObstacle", startDelay, spawnInterval);
         gameControllerScript = GameObject.Find("GameController").GetComponent<GameController>();
     }
+    private void Update()
+    {
+        SpawnWait();
+    }
     public void SpawnRandomObstacle()
     {
         if (gameControllerScript.gameContinue == true)
@@ -25,5 +29,10 @@ public class SpawnManager : MonoBehaviour
             Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(obstacleSpawnPos[obstacleSpawnIndex], 0, 120), obstaclePrefabs[obstacleIndex].transform.rotation);
             obstacleSpawnIndex = Random.Range(0, obstacleSpawnPos.Length);
         }
+    }
+    IEnumerator SpawnWait()
+    {
+        yield return new WaitForSeconds(spawnInterval);
+        SpawnRandomObstacle();
     }
 }
