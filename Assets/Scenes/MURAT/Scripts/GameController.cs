@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     private float border = 5.0f;
     public GameObject mainChar;
     public Text time, healt, status;
-    float timeCounter = 0.0f;
+    public float timeCounter = 0.0f;
     public int HealtCounter = 3;
     public string stringDeger;
     public bool IngOrMath;
