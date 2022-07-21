@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     public GameObject howToPlayPanel;
-    private void Start()
-    {
-
-    }
+    public GameObject aboutPanel;
+    
     public void CloseHowToPlayPanel()
     {
         howToPlayPanel.SetActive(false);
+    }
+    public void CloseAboutPanel()
+    {
+        aboutPanel.SetActive(false);
     }
     public void Play()
     {
@@ -28,6 +30,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void About()
     {
-
+        aboutPanel.SetActive(true);
     }
+   
 }
