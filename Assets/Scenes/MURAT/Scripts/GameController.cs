@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        TimeControl();
+      //  TimeControl();
         if (gameContinue)
         {
             MoveClamp();            
