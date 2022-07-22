@@ -3763,9 +3763,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"Odtu bilgi teknolojileri sertifika programi-Yazilim gelistirme\" dersi
-    icin bir araya gelen ekiptir(isimler cv baglantilidir).\n\nMurat Altunkaya\n\nFetiye
-    Ayk\u0131s\n\nGizem Bal Sari\n\nSeda Arcun Kolbasar"
+  m_text: "\"Odtu bilgi teknolojileri sertifika programi-Yazilim gelistirme proje
+    grubu.\n\nMurat Altunkaya\n\nFetiye Ayk\u0131s\n\nGizem Bal Sari\n\nSeda Arcun
+    Kolbasar"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6300edfa53415e047aeb361aad17951a, type: 2}
   m_sharedMaterial: {fileID: -8949324578726718729, guid: 6300edfa53415e047aeb361aad17951a, type: 2}

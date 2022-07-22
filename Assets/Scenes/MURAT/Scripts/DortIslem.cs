@@ -163,6 +163,7 @@ public class DortIslem : MonoBehaviour
             yield return new WaitForSecondsRealtime(1.5f);
             gameControllerScript.gameContinue = true;
             gameControllerScript.mathPanel.SetActive(false);
+            //gameControllerScript.timeCounter += 10;
             Difficulty();
         }
         else

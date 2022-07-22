@@ -1,0 +1,156 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5355505996431613752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7827128941823367542}
+  - component: {fileID: 5366056376326671271}
+  - component: {fileID: 261085820741816607}
+  - component: {fileID: 7525483298905658193}
+  m_Layer: 5
+  m_Name: Sheep
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7827128941823367542
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355505996431613752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 21.850037, y: 13.068665}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5366056376326671271
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355505996431613752}
+  m_CullTransparentMesh: 1
+--- !u!114 &261085820741816607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355505996431613752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6c580d4565673f34093e4c6d01448154, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7525483298905658193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355505996431613752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3276cf6b6faa1499842a16108d48a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isList:
+  - big: 0
+    tall: 0
+    dangerous: 0
+    small: 0
+    fat: 1
+  canList:
+  - fly: 0
+    swim: 0
+    climbTrees: 0
+    jumpHight: 0
+  doesList:
+  - wings: 0
+    fur: 1
+    fins: 0
+    feathers: 0
+    tail: 1
+    beak: 0
+    shell: 0
+    mane: 0
+    trunk: 0
+  colorList:
+  - green: 0
+    blue: 0
+    orange: 0
+    brown: 0
+    grey: 0
+    white: 1
+    pink: 0
+    yellow: 0
+  whatList:
+  - kindOfBird: 0
+    kindOfMammal: 1
+    kindOfFish: 0
+    kindOfReptile: 0
+    kindOfAmphibian: 0
+    kindOfInsect: 0
+    kindOfMollusc: 0
+    kindOfArachnid: 0
+  howList:
+  - notHeawy: 0
+    quiteHeawy: 1
+    veryHeawy: 0
+    slow: 1
+    avarageFast: 0
+    quickFast: 0
+    manyLegsZero: 0
+    manyLegsTwo: 0
+    manyLegsFour: 1
+    twoArms: 0
+  whereList:
+  - inTree: 0
+    inHome: 0
+    inWild: 0
+    inWater: 0
+    inFarm: 1
+    inIce: 0
+  doesItEatList:
+  - meat: 0
+    grass: 1
+    bananas: 0
+    leaves: 1
+  doList:
+  - eat: 1
+    lookAfter: 1
+    ride: 0
