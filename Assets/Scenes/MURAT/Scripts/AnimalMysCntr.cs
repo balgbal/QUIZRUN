@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Text.RegularExpressions;
 
-public class GameController : MonoBehaviour
+public class AnimalMysCntr : MonoBehaviour
 {
     #region Degiskenler
     public List<GameObject> allImages;
@@ -63,11 +63,12 @@ public class GameController : MonoBehaviour
      * 6.Adým => Butonlara 2.kelimeleri ata. ( 1.Adým )
      * 7.Adým => tüm adýmlarý tekrarla
     */
+    #region
     private void Start()
     {
         AnimalImage();
         FirstQuestionWord();
-        QuestionMark();
+        //QuestionMark();
         TrueAnswer();
     }
     public void VariableReset()
@@ -350,7 +351,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            StartCoroutine(Wait());            
+            StartCoroutine(Wait());
         }
     }
     public void FourthAnswerWord()
@@ -489,6 +490,10 @@ public class GameController : MonoBehaviour
         if (lastPressedButton == questionGO.GetComponent<Image>().sprite.name)
         {
             answerText.text = "Tebrikler";
+        }
+        else
+        {
+            answerText.text = "Bilemedin";
         }
     }
 
@@ -723,13 +728,13 @@ public class GameController : MonoBehaviour
                 {
                     buttonsControls[i].selectedBtn.GetComponentInChildren<TMP_Text>().text = "";
                 }
-                
+
                 ThirdAnswerWord();
 
             }
             else if (answerInSentece == 3 && thirdAnswerCount > 0)
             {
-                
+
                 for (int i = 0; i < thirdAnswerCount; i++)
                 {
                     if (firstAnswerWord[selectedBtnFirstAnswer].secondAnswerWords[selectedBtnSecondAnswer].thirdAnswerWords[i].answerWord3 == tempList[indexNo])
@@ -766,7 +771,7 @@ public class GameController : MonoBehaviour
                 {
                     buttonsControls[i].selectedBtn.GetComponentInChildren<TMP_Text>().text = "";
                 }
-                
+
                 FourthAnswerWord();
             }
             else if (answerInSentece == 4 && fourthAnswerCount > 0)
@@ -806,7 +811,7 @@ public class GameController : MonoBehaviour
                 {
                     buttonsControls[i].selectedBtn.GetComponentInChildren<TMP_Text>().text = "";
                 }
-                
+
                 FifthAnswerWord();
             }
             else
@@ -821,7 +826,7 @@ public class GameController : MonoBehaviour
     }
     public void TrueAnswer()
     {
-        int randomAnimalNo = Random.Range(0,images.Count);
+        int randomAnimalNo = Random.Range(0, images.Count);
         //System.GC.Collect();
         questionGO = randomImageList[randomAnimalNo];
         //AnimalProperties();
@@ -1121,7 +1126,7 @@ public class GameController : MonoBehaviour
     }
     IEnumerator Wait()
     {
-        if (answerInSentece == 4)
+        if (answerInSentece >= 4)
         {
             TrueAnswerControl();
         }
@@ -1132,7 +1137,7 @@ public class GameController : MonoBehaviour
         }
         Debug.Log(questionText.text);
         QuestionControl();
-        yield return new WaitForSecondsRealtime(2.0f);        
+        yield return new WaitForSecondsRealtime(2.0f);
         ResetButtons();
         VariableReset();
         FirstQuestionWord();
@@ -2389,7 +2394,7 @@ public class GameController : MonoBehaviour
         {
             string inLive = "Where does it live";
             string pattern = string.Format(@"\b{0}\b", lastPressedButton);
-            if (Regex.IsMatch(inLive,pattern))
+            if (Regex.IsMatch(inLive, pattern))
             {
                 if (questionGO.GetComponent<AnimalController>().whereList[0].inTree)
                 {
@@ -2484,7 +2489,7 @@ public class GameController : MonoBehaviour
             string eatBananas = "Does it eat bananas";
             string eatLeaves = "Does it eat leaves";
             string pattern = string.Format(@"\b{0}\b", lastPressedButton);
-            if (Regex.IsMatch(eatMeat,pattern))
+            if (Regex.IsMatch(eatMeat, pattern))
             {
                 if (questionGO.GetComponent<AnimalController>().doesItEatList[0].meat)
                 {
@@ -2524,7 +2529,7 @@ public class GameController : MonoBehaviour
                     }
                 }
             }
-            if (Regex.IsMatch(eatGrass,pattern))
+            if (Regex.IsMatch(eatGrass, pattern))
             {
                 if (questionGO.GetComponent<AnimalController>().doesItEatList[0].grass)
                 {
@@ -2564,7 +2569,7 @@ public class GameController : MonoBehaviour
                     }
                 }
             }
-            if (Regex.IsMatch(eatBananas,pattern))
+            if (Regex.IsMatch(eatBananas, pattern))
             {
                 if (questionGO.GetComponent<AnimalController>().doesItEatList[0].bananas)
                 {
@@ -2604,7 +2609,7 @@ public class GameController : MonoBehaviour
                     }
                 }
             }
-            if (Regex.IsMatch(eatLeaves,pattern))
+            if (Regex.IsMatch(eatLeaves, pattern))
             {
                 if (questionGO.GetComponent<AnimalController>().doesItEatList[0].leaves)
                 {
@@ -2651,7 +2656,7 @@ public class GameController : MonoBehaviour
             string lookAfterIt = "Do people look after it";
             string rideIt = "Do people ride it";
             string pattern = string.Format(@"\b{0}\b", lastPressedButton);
-            if (Regex.IsMatch(eatIt,pattern))
+            if (Regex.IsMatch(eatIt, pattern))
             {
                 if (questionGO.GetComponent<AnimalController>().doList[0].eat)
                 {
@@ -2773,8 +2778,8 @@ public class GameController : MonoBehaviour
             }
         }
     }
+    #endregion
 }
-
 #region Kelime Listeleri
 
 [System.Serializable]
@@ -2817,9 +2822,6 @@ public class FifthWord
 {
     public string word5;
 }
-
-
-
 [System.Serializable]
 public class FirstAnswerWord
 {
@@ -2850,4 +2852,3 @@ public class FifthAnswerWord
     public string answerWord5;
 }
 #endregion
-
