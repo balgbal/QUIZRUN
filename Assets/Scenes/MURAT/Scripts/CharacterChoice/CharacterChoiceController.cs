@@ -82,6 +82,5 @@ public class CharacterChoiceController : MonoBehaviour
         PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
         PlayerPrefs.Save();
         SceneManager.LoadScene("GameScene");
-
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameController : MonoBehaviour
     public GameObject questionPanel;
     public GameObject gameOverPanel;
     public GameObject mathPanel;
+    public GameObject ingPanel;
     public FloatingJoystick floatingJoystick;
     public Rigidbody playerRB;
     public float rlSpeed =30.0f;
@@ -29,7 +31,7 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-      //  TimeControl();
+        TimeControl();
         if (gameContinue)
         {
             MoveClamp();            
@@ -38,12 +40,12 @@ public class GameController : MonoBehaviour
         {
             if (HealtCounter != 0)
             {
-                mathPanel.SetActive(true);
+                questionPanel.SetActive(true);
             }
             else
             {
                 gameContinue = false;
-                mathPanel.SetActive(false);
+                questionPanel.SetActive(false);
                 gameOverPanel.SetActive(true);
             }            
         }
@@ -58,12 +60,12 @@ public class GameController : MonoBehaviour
         {
             if (HealtCounter != 0)
             {
-                mathPanel.SetActive(true);
+                questionPanel.SetActive(true);
             }
             else
             {
                 gameContinue = false;
-                mathPanel.SetActive(false);
+                questionPanel.SetActive(false);
                 gameOverPanel.SetActive(true);
             }
         }
@@ -79,6 +81,7 @@ public class GameController : MonoBehaviour
         else if (stringDeger == "ingilizce")
         {
             IngOrMath = false;
+            ingPanel = Instantiate(Resources.Load("AnimalMysteryPanel") as GameObject, questionPanel.transform);
         }
     }
     public void TimeControl()
@@ -102,5 +105,16 @@ public class GameController : MonoBehaviour
     {
         Vector3 direction = Vector3.right * floatingJoystick.Horizontal;
         playerRB.AddForce(direction * rlSpeed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+    }
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("GameScene");
+        gameOverPanel.SetActive(false);
+        HealtCounter = 3;
+        timeCounter = 0.0f;
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

@@ -52,6 +52,7 @@ public class AnimalMysCntr : MonoBehaviour
     [SerializeField] private string lastPressedButton;
     [SerializeField] private string firstPressedButton;
     [SerializeField] private GameObject questionGO;
+    public GameController gameControllerScript;
     #endregion
 
     /*
@@ -66,10 +67,11 @@ public class AnimalMysCntr : MonoBehaviour
     #region
     private void Start()
     {
+        gameControllerScript = GameObject.Find("GameController").GetComponent<GameController>();
         AnimalImage();
         FirstQuestionWord();
-        //QuestionMark();
         TrueAnswer();
+        //QuestionMark();
     }
     public void VariableReset()
     {
@@ -91,6 +93,7 @@ public class AnimalMysCntr : MonoBehaviour
         fifthAnswerCount = 0;
         wordInSentence = 1;
         answerInSentece = 1;
+        randomImageList.Clear();
     }
     public void ResetButtons()
     {
@@ -487,13 +490,44 @@ public class AnimalMysCntr : MonoBehaviour
     #endregion
     public void TrueAnswerControl()
     {
+        StartCoroutine(WaitAnswerCheck());
+    }
+    public IEnumerator WaitAnswerCheck()
+    {
         if (lastPressedButton == questionGO.GetComponent<Image>().sprite.name)
         {
-            answerText.text = "Tebrikler";
+            answerText.text = "Tebrikler, doðru cevap";
+            gameControllerScript.timeCounter += 10;
+            yield return new WaitForSecondsRealtime(1.5f);
+            gameControllerScript.gameContinue = true;
+            gameControllerScript.questionPanel.SetActive(false);
+            answerInSentece = 1;
+            wordInSentence = 1;
+            VariableReset();
+            AnimalImage();
+            FirstQuestionWord();
+            TrueAnswer();
+            ResetButtons();
         }
         else
         {
-            answerText.text = "Bilemedin";
+            answerText.text = "Üzgünüm, yanlýþ cevap";
+            gameControllerScript.timeCounter -= 10;
+            gameControllerScript.HealtCounter = gameControllerScript.HealtCounter - 1;
+            gameControllerScript.healt.text = gameControllerScript.HealtCounter + "";
+            if (gameControllerScript.HealtCounter != 0)
+            {
+                yield return new WaitForSecondsRealtime(1.5f);
+                gameControllerScript.questionPanel.SetActive(false);
+                gameControllerScript.gameContinue = true;
+                answerInSentece = 1;
+                wordInSentence = 1;
+                VariableReset();
+                AnimalImage();
+                FirstQuestionWord();
+                TrueAnswer();
+                ResetButtons();
+            }
         }
     }
 
@@ -829,7 +863,6 @@ public class AnimalMysCntr : MonoBehaviour
         int randomAnimalNo = Random.Range(0, images.Count);
         //System.GC.Collect();
         questionGO = randomImageList[randomAnimalNo];
-        //AnimalProperties();
     }
     public void AnimalProperties()
     {
@@ -1100,11 +1133,6 @@ public class AnimalMysCntr : MonoBehaviour
                 Debug.Log("ride");
             }
         }
-    }
-    public void QuestionMark()
-    {
-        LeanTween.scale(questionMarks[question], new Vector3(3, 3, 0), 0.5f);
-        LeanTween.move(questionMarks[question], new Vector3(960, 850, 0), 0.5f);
     }
     public void AnimalImage()
     {

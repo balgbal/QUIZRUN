@@ -162,8 +162,8 @@ public class DortIslem : MonoBehaviour
             conclusion.text = "DOGRU";
             yield return new WaitForSecondsRealtime(1.5f);
             gameControllerScript.gameContinue = true;
-            gameControllerScript.mathPanel.SetActive(false);
-            //gameControllerScript.timeCounter += 10;
+            gameControllerScript.questionPanel.SetActive(false);
+            gameControllerScript.timeCounter += 10;
             Difficulty();
         }
         else
@@ -174,7 +174,8 @@ public class DortIslem : MonoBehaviour
             if (gameControllerScript.HealtCounter != 0)
             {
                 yield return new WaitForSecondsRealtime(1.5f);
-                gameControllerScript.mathPanel.SetActive(false);
+                gameControllerScript.questionPanel.SetActive(false);
+                gameControllerScript.timeCounter -= 10;
                 gameControllerScript.gameContinue = true;                
                 Difficulty();
             }
