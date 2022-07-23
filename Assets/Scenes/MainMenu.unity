@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.50159144, g: 0.87329495, b: 0.9094268, a: 1}
+  m_IndirectSpecularColor: {r: 0.5015915, g: 0.87329495, b: 0.9094268, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1097,7 +1097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &712106854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1367,8 +1367,9 @@ MonoBehaviour:
   m_text: "Karakter parkurda ko\u015Fmaya ba\u015Flayacak ve ekran\u0131n herhangi
     bir noktas\u0131na dokunup saga veya sola \xE7ekerek engellerden kacmaya cal\u0131sacaktir.\n\nEngellere
     carpt\u0131ginda \r\nbilgi olcmek i\xE7in bir soru ekrani acilacaktir. Oyuncu
-    soruya dogru cevap\n\rverdiginde parkura devam edebilecek, yanl\u0131s cevapta
-    oyunu bitecektir. \n\nHer dogru cevap +10 puan ve her yanlis cevap -10 puan olacaktir."
+    soruya dogru cevap\n\rverdiginde parkura devam edebilecek, yanl\u0131s cevap
+    verdi\u011Finde 1 can azalacakt\u0131r.\n\nHer dogru cevap +10 puan ve her yanlis
+    cevap -10 puan olacaktir."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6300edfa53415e047aeb361aad17951a, type: 2}
   m_sharedMaterial: {fileID: -8949324578726718729, guid: 6300edfa53415e047aeb361aad17951a, type: 2}
@@ -1395,7 +1396,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.7
+  m_fontSize: 30.35
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
