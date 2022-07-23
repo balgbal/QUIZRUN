@@ -10,7 +10,6 @@ public class DortIslem : MonoBehaviour
     int number1,number2,operationNo;
     int operationConcluion;
     public GameController gameControllerScript;
-    public CharacterChoiceAnimation characterChoiceAnimationScript;
     public bool diff = true;
     public string stringDeger;
     private void Start()
@@ -19,7 +18,7 @@ public class DortIslem : MonoBehaviour
         DifficultySelection();
         Difficulty();
         gameControllerScript = GameObject.Find("GameController").GetComponent<GameController>();
-        characterChoiceAnimationScript = GameObject.Find("CharacterChoiceAnimation").GetComponent<CharacterChoiceAnimation>();
+        
     }
     public void DifficultySelection()
     {
